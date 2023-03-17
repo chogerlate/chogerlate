@@ -69,7 +69,7 @@ I'm a student of computer engineering at King Mongkut's University of Technology
 
 ## Contact
 
-- Email: siwaratlaopromger4444@gmail.com
-<!-- - LinkedIn: [Your LinkedIn profile URL] -->
+- Email: siwarat.laoprom.forwork@gmail.com
+- LinkedIn: [Siwarat Laoprom](https://www.linkedin.com/in/siwarat-laoprom-69608226a/)
 
 ***
