@@ -5,7 +5,7 @@
 <!-- ![Chogerlate's GitHub stats](https://github-readme-stats.vercel.app/api?username=chogerlate&show_icons=true&theme=codeSTACKr) -->
 
 
-| <a href="https://github.com/anuraghazra/github-readme-stats"><img align="center" src="https://github-readme-stats.vercel.app/api?username=chogerlate&show_icons=true&theme=codeSTACKr" alt="Anurag's github stats" /></a> | <a href="https://github.com/anuraghazra/github-readme-stats"><img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=chogerlate&layout=compact" /></a> |
+| <a href="https://github.com/anuraghazra/github-readme-stats"><img align="center" src="https://github-readme-stats.vercel.app/api?username=chogerlate&show_icons=true&theme=codeSTACKr" alt="Chogerlate's github stats" /></a> | <a href="https://github.com/anuraghazra/github-readme-stats"><img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=chogerlate&layout=compact" /></a> |
 | ------------- | ------------- |
 
 
