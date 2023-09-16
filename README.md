@@ -12,7 +12,9 @@
 
 <br/>
 
-**` Fantasy Creator `**
+**` Fantasy Creator `** 
+
+![](https://komarev.com/ghpvc/?username=chogerlate)
 
 
 I'm a student of computer engineering at King Mongkut's University of Technology Thonburi (KMUTT). My aspirations involve robotics, web development, application development, and the field of AI and ML deep learning. I began coding when I was in middle school as a member of my school's Robotics Club, and I used to compete in several robotics competitions in Thailand.
