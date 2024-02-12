@@ -28,7 +28,6 @@ I'm a student of computer engineering at King Mongkut's University of Technology
 
 - 📫 How to reach me **siwarat.laoprom.forwork@gmail.com**
 
-- ⚡ Fun fact **I like working on projects.**
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
