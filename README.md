@@ -1,77 +1,53 @@
-# Hi, I'm Siwarat Laoprom 👋
-***
+<h1 align="center">Hi 👋, I'm Siwarat Laoprom</h1>
+<h3 align="center">A passionate Machine Learning Engineer from Thailand</h3>
+
 <br/>
 
-<!-- ![Chogerlate's GitHub stats](https://github-readme-stats.vercel.app/api?username=chogerlate&show_icons=true&theme=codeSTACKr) -->
 
+
+I'm a student of computer engineering at King Mongkut's University of Technology Thonburi (KMUTT). My aspirations involve robotics, web development, application development, and the field of AI and ML deep learning. 
+
+<!-- ![Chogerlate's GitHub stats](https://github-readme-stats.vercel.app/api?username=chogerlate&show_icons=true&theme=codeSTACKr) -->
 
 | <a href="https://github.com/anuraghazra/github-readme-stats"><img align="center" src="https://github-readme-stats.vercel.app/api?username=chogerlate&show_icons=true&theme=codeSTACKr" alt="chogerlate's github stats" /></a> | <a href="https://github.com/anuraghazra/github-readme-stats"><img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=chogerlate&layout=compact" /></a> |
 | ------------- | ------------- |
 
 
-
 <br/>
 
-**` Fantasy Creator `** 
 
-![](https://komarev.com/ghpvc/?username=chogerlate)
+<p align="left"> <img src="https://komarev.com/ghpvc/?username=chogerlate&label=Profile%20views&color=0e75b6&style=flat" alt="chogerlate" /> </p>
 
+- 🌱 I’m currently learning **Machine Learning Engineer**, **MLOps**
 
-I'm a student of computer engineering at King Mongkut's University of Technology Thonburi (KMUTT). My aspirations involve robotics, web development, application development, and the field of AI and ML deep learning. I began coding when I was in middle school as a member of my school's Robotics Club, and I used to compete in several robotics competitions in Thailand.
+- 👨‍💻 All of my projects are available at [https://bento.me/siwarat](https://bento.me/siwarat)
 
-***
+- 📝 I regularly write articles on [https://medium.com/@siwaratlaoprom](https://medium.com/@siwaratlaoprom)
 
-## Languages and Tools 
+- 💬 Ask me about **Pytorch, Deep Learning, Image Processing, Object Detection**
 
-<img align="left" alt="Java" width="30px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"/>
-<img align="left" alt="Spring" width="30px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" />
-<img align="left" alt="TypeScript" width="30px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" />
-<img align="left" alt="Angular" width="30px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" />
-<img align="left" alt="Git" width="30px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" />
-<img align="left" alt="JavaScript" width="30px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg" />
-<img align="left" alt="Bash" width="30px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" />
-<img align="left" alt="React" width="30px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" />
-<img align="left" alt="NodeJS" width="30px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" />
-<img align="left" alt="Python" width="30px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original-wordmark.svg" />
-<img align="left" alt="C++" width="30px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" />
-<img align="left" alt="Gradle" width="30px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" />
-<img align="left" alt="GitHub" width="30px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" />
-<br />
+- 📫 How to reach me **siwarat.laoprom.forwork@gmail.com**
+
+- ⚡ Fun fact **I like working on projects.**
+
+<h3 align="left">Connect with me:</h3>
+<p align="left">
+<a href="https://linkedin.com/in/siwarat laoprom" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="siwarat laoprom" height="30" width="40" /></a>
+<a href="https://kaggle.com/siwarat laoprom" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/kaggle.svg" alt="siwarat laoprom" height="30" width="40" /></a>
+<a href="https://medium.com/@siwaratlaoprom" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/medium.svg" alt="@siwaratlaoprom" height="30" width="40" /></a>
+</p>
+
 
 
 ***
 
-# Projcet</h1></summary>
-    1.PID Motor Control Line-Following Robot (Team):
-    This project involves building a robot that can follow a line autonomously using a PID (Proportional-Integral-Derivative) motor control system. The robot will be equipped with sensors to detect the line and a microcontroller to execute the control algorithm. The goal is to create a robust and accurate system that can navigate through complex paths with varying widths and sharp turns.
-
-    2.Maze-Solving Robot with PID Encoder Control (Team):
-    This project involves building a robot that can solve a maze autonomously using a PID (Proportional-Integral-Derivative) encoder control system. The robot will be equipped with sensors to detect walls and a microcontroller to execute the control algorithm. The goal is to create a system that can navigate through complex mazes with dead-ends, loops, and multiple paths, while optimizing for speed and accuracy.
-
-    3.NBA888 Fun Quiz Web-Application (Team):
-    NBA888 is a web-application that provides fun facts, NBA histories, and player style analysis. The application will allow users to take quizzes and learn about the history and culture of the NBA. The goal is to create an engaging and informative platform for NBA fans to connect and learn about their favorite players and teams.
-
-    4.Machine Learning Poverty Rate Prediction using Autoguon as a Model and Geospatial Data of Thailand (Team):
-    This project involves using machine learning to predict poverty rates in Thailand using the Autoguon model and geospatial data. The goal is to create a model that can accurately predict poverty rates in different regions of Thailand, and help policymakers make informed decisions about poverty reduction strategies.
-
-    5.Unsupervised Image Classification using Autoencoder Model (Team):
-    This project involves using an autoencoder model to perform unsupervised image classification. The goal is to train a model that can identify and cluster images without the need for manual labels. The project will use deep learning techniques to create a model that can learn meaningful representations of the images and perform accurate classification.
-
-    6.Maze Solving TurtlebotV3 using RL Model (Team):
-    This project involves building a TurtlebotV3 robot that can solve a maze using a Reinforcement Learning (RL) model. The goal is to create a system that can navigate through complex mazes using trial-and-error learning. The robot will be equipped with sensors to detect walls and a camera to detect visual cues. The project will use RL techniques to train the robot to find the optimal path through the maze.
-
-    7.NLP Long Document Retrieval using Elasticsearch and Transformer (Team):
-    This project involves building a system for long document retrieval using Elasticsearch and Transformer models. The goal is to create a system that can efficiently and accurately retrieve relevant documents from a large corpus. The project will use natural language processing techniques to preprocess and encode the documents, and Elasticsearch to index and search the corpus. The Transformer model will be used to match the query with the relevant documents.
+<h3 align="left">Languages and Tools:</h3>
+<p align="left"> <a href="https://aws.amazon.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="aws" width="40" height="40"/> </a> <a href="https://www.gnu.org/software/bash/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/gnu_bash/gnu_bash-icon.svg" alt="bash" width="40" height="40"/> </a> <a href="https://www.cprogramming.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg" alt="c" width="40" height="40"/> </a> <a href="https://www.w3schools.com/cpp/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" alt="cplusplus" width="40" height="40"/> </a> <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/> </a> <a href="https://www.docker.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg" alt="docker" width="40" height="40"/> </a> <a href="https://expressjs.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg" alt="express" width="40" height="40"/> </a> <a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a> <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a> <a href="https://www.linux.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" alt="linux" width="40" height="40"/> </a> <a href="https://www.mongodb.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg" alt="mongodb" width="40" height="40"/> </a> <a href="https://www.mysql.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="40" height="40"/> </a> <a href="https://www.nginx.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nginx/nginx-original.svg" alt="nginx" width="40" height="40"/> </a> <a href="https://nodejs.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40"/> </a> <a href="https://opencv.org/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/opencv/opencv-icon.svg" alt="opencv" width="40" height="40"/> </a> <a href="https://pandas.pydata.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/2ae2a900d2f041da66e950e4d48052658d850630/icons/pandas/pandas-original.svg" alt="pandas" width="40" height="40"/> </a> <a href="https://www.postgresql.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg" alt="postgresql" width="40" height="40"/> </a> <a href="https://postman.com" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" alt="postman" width="40" height="40"/> </a> <a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/> </a> <a href="https://pytorch.org/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/pytorch/pytorch-icon.svg" alt="pytorch" width="40" height="40"/> </a> <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/> </a> <a href="https://scikit-learn.org/" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="scikit_learn" width="40" height="40"/> </a> <a href="https://seaborn.pydata.org/" target="_blank" rel="noreferrer"> <img src="https://seaborn.pydata.org/_images/logo-mark-lightbg.svg" alt="seaborn" width="40" height="40"/> </a> <a href="https://tailwindcss.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt="tailwind" width="40" height="40"/> </a> <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="typescript" width="40" height="40"/> </a> </p>
 
 ***
 
 ## Education
 
 - Bachelor of Engineering in Computer Engineering, King Mongkut's University of Technology Thonburi (KMUTT) [2022 Year - now]
-
-## Contact
-
-- Email: siwarat.laoprom.forwork@gmail.com
-- LinkedIn: [Siwarat Laoprom](https://www.linkedin.com/in/siwarat-laoprom-69608226a/)
 
 ***
