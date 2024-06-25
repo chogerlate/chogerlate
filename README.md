@@ -13,7 +13,22 @@ I'm a student of computer engineering at King Mongkut's University of Technology
 | ------------- | ------------- |
 
 
-<br/>
+## Latest Update
+
+<div style="background-color: #f0f0f0; border-left: 6px solid #ff9800; margin-bottom: 15px; padding: 10px;">
+  <table>
+      <td>
+        <img width="60" height="60" src="https://img.icons8.com/?size=100&id=AtHdUVEirZEy&format=png&color=000000" alt="alert-icon"/>
+      </td>
+      <td>
+        <h3 style="margin: 0; font-weight: bold;"> 🚀 New Project Alert: Portfolio Website! 🚀</h3>
+        <p style="margin: 0;">I just launched my first portfolio website. Check it out <a href="https://siwarat-laoprom-portfolio.vercel.app/" target = "_blank" >here</a>!</p>
+        <p style="margin: 0; font-size: 80%; color: #666;">Last updated: June 25, 2024</p>
+      </td>
+    </tr>
+  </table>
+</div>
+
 
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=chogerlate&label=Profile%20views&color=0e75b6&style=flat" alt="chogerlate" /> </p>
