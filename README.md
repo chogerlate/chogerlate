@@ -12,7 +12,7 @@ I'm a student of computer engineering at King Mongkut's University of Technology
 | <a href="https://github.com/anuraghazra/github-readme-stats"><img align="center" src="https://github-readme-stats.vercel.app/api?username=chogerlate&show_icons=true&theme=codeSTACKr" alt="chogerlate's github stats" /></a> | <a href="https://github.com/anuraghazra/github-readme-stats"><img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=chogerlate&layout=compact" /></a> |
 | ------------- | ------------- |
 
-
+<!-- 
 ## Latest Update
 
 <div style="background-color: #f0f0f0; border-left: 6px solid #ff9800; margin-bottom: 15px; padding: 10px;">
@@ -29,7 +29,7 @@ I'm a student of computer engineering at King Mongkut's University of Technology
   </table>
 </div>
 
-
+-->
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=chogerlate&label=Profile%20views&color=0e75b6&style=flat" alt="chogerlate" /> </p>
 
