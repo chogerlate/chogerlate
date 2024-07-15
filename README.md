@@ -37,7 +37,7 @@ I'm a student of computer engineering at King Mongkut's University of Technology
 
 - 👨‍💻 All of my projects are available at [https://bento.me/siwarat](https://bento.me/siwarat)
 
-- 📝 I regularly write articles on [https://medium.com/@siwaratlaoprom](https://medium.com/@siwaratlaoprom)
+- 📝 I write articles on [https://medium.com/@siwaratlaoprom](https://medium.com/@siwaratlaoprom)
 
 - 💬 Ask me about **Pytorch, Deep Learning, Image Processing, Object Detection**
 
