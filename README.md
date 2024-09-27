@@ -8,11 +8,11 @@
 I'm a student of computer engineering at King Mongkut's University of Technology Thonburi (KMUTT). My aspirations involve robotics, web development, application development, and the field of AI and ML deep learning. 
 
 <!-- ![Chogerlate's GitHub stats](https://github-readme-stats.vercel.app/api?username=chogerlate&show_icons=true&theme=codeSTACKr) -->
-
+<!--
 | <a href="https://github.com/anuraghazra/github-readme-stats"><img align="center" src="https://github-readme-stats.vercel.app/api?username=chogerlate&show_icons=true&theme=codeSTACKr" alt="chogerlate's github stats" /></a> | <a href="https://github.com/anuraghazra/github-readme-stats"><img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=chogerlate&layout=compact" /></a> |
 | ------------- | ------------- |
 
-<!-- 
+ 
 ## Latest Update
 
 <div style="background-color: #f0f0f0; border-left: 6px solid #ff9800; margin-bottom: 15px; padding: 10px;">
@@ -35,7 +35,7 @@ I'm a student of computer engineering at King Mongkut's University of Technology
 
 - 🌱 I’m currently learning **Machine Learning Engineer**, **MLOps**
 
-- 👨‍💻 All of my projects are available at [https://bento.me/siwarat](https://bento.me/siwarat)
+- 👨‍💻 All of my projects are available at [https://siwarat-laoprom-portfolio.vercel.app](https://siwarat-laoprom-portfolio.vercel.app)
 
 - 📝 I write articles on [https://medium.com/@siwaratlaoprom](https://medium.com/@siwaratlaoprom)
 
