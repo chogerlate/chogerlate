@@ -39,7 +39,7 @@ I'm a student of computer engineering at King Mongkut's University of Technology
 
 - 📝 I write articles on [https://medium.com/@siwaratlaoprom](https://medium.com/@siwaratlaoprom)
 
-- 💬 Ask me about **Pytorch, Deep Learning, Image Processing, Object Detection**
+- 💬 Ask me about **Pytorch, Machine Learning, Deep Learning, Computer Vision and Generative AI**
 
 - 📫 How to reach me **siwarat.laoprom.forwork@gmail.com**
 
