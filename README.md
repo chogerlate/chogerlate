@@ -33,7 +33,7 @@ I'm a student of computer engineering at King Mongkut's University of Technology
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=chogerlate&label=Profile%20views&color=0e75b6&style=flat" alt="chogerlate" /> </p>
 
-- 🌱 I’m currently learning **AI/ML Engineer** **AI Researcher**, **MLOps**
+- 🌱 I’m currently learning **AI/ML Engineer**, **AI Researcher**, **MLOps**
 
 - 👨‍💻 All of my projects are available at [https://siwarat-laoprom-portfolio.vercel.app](https://siwarat-laoprom-portfolio.vercel.app)
 
