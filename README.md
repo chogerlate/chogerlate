@@ -35,7 +35,7 @@ I'm a student of computer engineering at King Mongkut's University of Technology
 
 - 🌱 I’m currently learning **AI/ML Engineer**, **AI Researcher**, **MLOps**
 
-- 👨‍💻 All of my projects are available at [https://siwarat-laoprom-portfolio.vercel.app](https://siwarat.xyz)
+- 👨‍💻 All of my projects are available at [https://siwarat.xyz](https://siwarat.xyz)
 
 - 📝 I write articles on [https://medium.com/@siwaratlaoprom](https://medium.com/@siwaratlaoprom)
 
