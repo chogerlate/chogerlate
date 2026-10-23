@@ -1,121 +1,136 @@
-#!/usr/bin/env python3
 """
-Generate a neofetch-style terminal info card SVG.
-Canvas: 840 x 880 (matches profile-ascii.svg and stats.svg).
+Build a neofetch-style info card SVG (Andrew6rant style) to sit to the RIGHT of
+the ASCII portrait: colored key/value rows for work experience, tech stack, and
+highlights -- NOT GitHub stats (the contribution graph covers those).
+
+Static content, hand-authored below. Lines fade/slide in on a short stagger so
+it feels like the panel is printing alongside the portrait. STATIC=1 emits the
+frozen state for Quick Look previews.
 """
+import html
 import os
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-DEFAULT_OUT = os.path.join(HERE, "..", "info-card.svg")
+OUT = sys.argv[1] if len(sys.argv) > 1 else os.path.join(HERE, "..", "info-card.svg")
+STATIC = bool(os.environ.get("STATIC"))
 
-W, H = 840, 880
-PAD = 28
-TITLEBAR_H = 34
+W, H = 480, 376
+PAD = 20
+TITLEBAR_H = 30
+KEY_X = PAD
+VAL_X = PAD + 92
+LINE_H = 20.5
 
 BG = "#0d1117"
 BG2 = "#111722"
 FRAME = "#30363d"
 MUTED = "#7d8590"
-TEXT = "#e6edf3"
-CYAN = "#22d3ee"
-GREEN = "#39d353"
-PURPLE = "#bc8cff"
-YELLOW = "#e3b341"
+INK = "#c9d1d9"
+KEY = "#ffa657"      # orange keys (matches Andrew)
+SECTION = "#58a6ff"  # blue section headers
+GREEN = "#3fb950"
+ACCENT = "#22d3ee"
+
+# content model: tuples describing each row
+# ("host",)                    -> "chogerlate@github" + rule
+# ("kv", key, value)           -> orange key + light value
+# ("sec", title)               -> blue "— title —" rule
+# ("bul", text)                -> green dot + light text
+# ("gap",)                     -> vertical space
+ROWS = [
+    ("host",),
+    ("kv", "Now", "Machine Learning Engineer & Student @ KMUTT"),
+    ("kv", "Prev", "AI & Robotics Developer"),
+    ("kv", "Also", "Technical Writer @ Medium"),
+    ("kv", "Edu", "B.Eng. Computer Engineering, KMUTT"),
+    ("gap",),
+    ("sec", "Stack"),
+    ("kv", "AI / ML", "PyTorch, TorchVision, OpenCV, HuggingFace"),
+    ("kv", "Focus", "Deep Learning, Computer Vision, Generative AI"),
+    ("kv", "Languages", "Python, C++, TypeScript, HTML/CSS"),
+    ("kv", "Tools", "Docker, FastAPI, Git, Linux"),
+    ("gap",),
+    ("sec", "Highlights"),
+    ("bul", "Portfolio: https://siwarat.xyz"),
+    ("bul", "Medium articles: medium.com/@siwaratlaoprom"),
+]
 
 
-def generate_info_card(out_path=DEFAULT_OUT, user="chogerlate", name="Siwarat Laoprom"):
-    rows = [
-        ("user", f"{user} ({name})", CYAN),
-        ("role", "Machine Learning Engineer", GREEN),
-        ("host", "Computer Engineering @ KMUTT", YELLOW),
-        ("focus", "Deep Learning, Computer Vision, Generative AI, MLOps", TEXT),
-        ("frameworks", "PyTorch, TorchVision, OpenCV, HuggingFace", PURPLE),
-        ("stack", "Python, C++, Docker, FastAPI, Git, Linux", TEXT),
-        ("projects", "https://siwarat.xyz", CYAN),
-        ("articles", "medium.com/@siwaratlaoprom", TEXT),
-        ("contact", "siwarat.laoprom.forwork@gmail.com", TEXT),
-        ("uptime", "Lifelong Learner & AI Builder", GREEN),
-    ]
+def esc(s):
+    return html.escape(s)
 
+
+def rise(inner, i):
+    """fade + slight upward slide, staggered by row index; freezes visible."""
+    if STATIC:
+        return f"<g>{inner}</g>"
+    delay = 0.15 + i * 0.06
+    return (f'<g opacity="0" transform="translate(0,5)">{inner}'
+            f'<animate attributeName="opacity" from="0" to="1" begin="{delay:.2f}s" dur="0.4s" fill="freeze"/>'
+            f'<animateTransform attributeName="transform" type="translate" from="0 5" to="0 0" '
+            f'begin="{delay:.2f}s" dur="0.4s" fill="freeze" calcMode="spline" keySplines="0.2 0.8 0.2 1"/></g>')
+
+
+def generate_info_card(out_path=OUT):
     parts = [
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" '
         f'font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">',
         '<style>',
-        '.r { opacity: 0; animation: fadeSlide 0.4s ease-out both; }',
-        '@keyframes fadeSlide { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }',
-        '@media (prefers-reduced-motion: reduce) { .r { opacity: 1 !important; transform: none !important; animation: none !important; } }',
+        '@media (prefers-reduced-motion: reduce) {',
+        '  g { opacity: 1 !important; transform: none !important; animation: none !important; }',
+        '}',
         '</style>',
-        '<defs>',
-        f'<linearGradient id="ibg" x1="0" y1="0" x2="0" y2="1">',
-        f'<stop offset="0" stop-color="{BG2}"/><stop offset="1" stop-color="{BG}"/>',
-        '</linearGradient></defs>',
+        '<defs>'
+        f'<linearGradient id="ibg" x1="0" y1="0" x2="0" y2="1">'
+        f'<stop offset="0" stop-color="{BG2}"/><stop offset="1" stop-color="{BG}"/></linearGradient></defs>',
         f'<rect width="{W}" height="{H}" rx="12" fill="url(#ibg)"/>',
         f'<rect x="0.5" y="0.5" width="{W-1}" height="{H-1}" rx="12" fill="none" stroke="{FRAME}"/>',
         f'<line x1="0" y1="{TITLEBAR_H}" x2="{W}" y2="{TITLEBAR_H}" stroke="{FRAME}"/>',
     ]
-
-    for i, dot in enumerate(["#ff5f56", "#ffbd2e", "#27c93f"]):
-        parts.append(f'<circle cx="{PAD + i*16}" cy="{TITLEBAR_H/2}" r="5" fill="{dot}"/>')
+    for i, dotcol in enumerate(["#ff5f56", "#ffbd2e", "#27c93f"]):
+        parts.append(f'<circle cx="{PAD + i*16}" cy="{TITLEBAR_H/2}" r="5" fill="{dotcol}"/>')
     parts.append(f'<text x="{W/2}" y="{TITLEBAR_H/2 + 4}" fill="{MUTED}" font-size="12" '
-                 f'text-anchor="middle">{user}@kmutt: ~$ neofetch</text>')
+                 f'text-anchor="middle">chogerlate@github: ~$ neofetch</text>')
 
-    # ASCII logo / symbol on left
-    logo_lines = [
-        r"      /\_/\      ",
-        r"     ( o.o )     ",
-        r"      > ^ <      ",
-        r"   ___________   ",
-        r"  /  AI & ML  \  ",
-        r" /   ENGINEER  \ ",
-        r" \_____________/ ",
-        r"    |       |    ",
-        r"    |_______|    ",
-    ]
-    logo_top = TITLEBAR_H + 46
-    for i, line in enumerate(logo_lines):
-        parts.append(
-            f'<text x="{PAD}" y="{logo_top + i * 22}" fill="{CYAN}" font-size="16" '
-            f'xml:space="preserve">{line}</text>'
-        )
+    y = TITLEBAR_H + 30
+    for i, row in enumerate(ROWS):
+        kind = row[0]
+        if kind == "gap":
+            y += LINE_H * 0.5
+            continue
+        if kind == "host":
+            inner = (f'<text x="{KEY_X}" y="{y:.1f}" font-size="14" font-weight="700">'
+                     f'<tspan fill="{GREEN}">chogerlate</tspan><tspan fill="{MUTED}">@</tspan>'
+                     f'<tspan fill="{ACCENT}">github</tspan></text>'
+                     f'<line x1="{KEY_X+140}" y1="{y-4:.1f}" x2="{W-PAD}" y2="{y-4:.1f}" '
+                     f'stroke="{FRAME}" stroke-opacity="0.8"/>')
+        elif kind == "sec":
+            title = esc(row[1])
+            inner = (f'<text x="{KEY_X}" y="{y:.1f}" fill="{SECTION}" font-size="12.5" font-weight="700">'
+                     f'&#8212; {title}</text>'
+                     f'<line x1="{KEY_X + 12 + len(row[1])*8}" y1="{y-4:.1f}" x2="{W-PAD}" y2="{y-4:.1f}" '
+                     f'stroke="{FRAME}" stroke-opacity="0.8"/>')
+        elif kind == "kv":
+            key, val = esc(row[1]), esc(row[2])
+            inner = (f'<text x="{KEY_X}" y="{y:.1f}" fill="{KEY}" font-size="12.5" font-weight="700">{key}</text>'
+                     f'<text x="{VAL_X}" y="{y:.1f}" fill="{INK}" font-size="12.5">{val}</text>')
+        elif kind == "bul":
+            txt = esc(row[1])
+            inner = (f'<circle cx="{KEY_X+3}" cy="{y-4:.1f}" r="2.5" fill="{GREEN}"/>'
+                     f'<text x="{KEY_X+14}" y="{y:.1f}" fill="{INK}" font-size="12.5">{txt}</text>')
+        else:
+            continue
+        parts.append(rise(inner, i))
+        y += LINE_H
 
-    # Info rows on right
-    content_left = PAD + 230
-    title_y = TITLEBAR_H + 50
-    parts.append(f'<text x="{content_left}" y="{title_y}" font-size="20" font-weight="700" fill="{CYAN}">{user}<tspan fill="{MUTED}">@</tspan>kmutt</text>')
-    parts.append(f'<line x1="{content_left}" y1="{title_y + 10}" x2="{W - PAD}" y2="{title_y + 10}" stroke="{FRAME}"/>')
-
-    row_start_y = title_y + 40
-    for idx, (label, val, val_color) in enumerate(rows):
-        y = row_start_y + idx * 46
-        delay = 0.15 + idx * 0.08
-        parts.append(f'<g class="r" style="animation-delay:{delay:.2f}s">')
-        parts.append(f'<text x="{content_left}" y="{y}" fill="{MUTED}" font-size="16" font-weight="600">{label}:</text>')
-        # Truncate long value if needed
-        parts.append(f'<text x="{content_left + 140}" y="{y}" fill="{val_color}" font-size="16">{val}</text>')
-        parts.append('</g>')
-
-    # Color palette blocks at bottom
-    colors = ["#161b22", "#ff5f56", "#27c93f", "#e3b341", "#22d3ee", "#bc8cff", "#f0883e", "#e6edf3"]
-    block_y = H - PAD - 26
-    parts.append(f'<line x1="{PAD}" y1="{block_y - 18}" x2="{W - PAD}" y2="{block_y - 18}" stroke="{FRAME}"/>')
-    bx = content_left
-    for c in colors:
-        parts.append(f'<rect x="{bx}" y="{block_y}" width="28" height="20" rx="3" fill="{c}"/>')
-        bx += 36
-
-    parts.append('</svg>')
+    parts.append("</svg>")
     svg = "".join(parts)
-
-    os.makedirs(os.path.dirname(os.path.abspath(out_path)), exist_ok=True)
     with open(out_path, "w", encoding="utf-8") as f:
         f.write(svg)
-    print(f"wrote {out_path}: {W} x {H}, {len(svg)//1024} KB")
+    print("wrote", out_path, len(svg), "bytes;", W, "x", H, "content_bottom", round(y))
     return out_path
 
 
 if __name__ == "__main__":
-    out = sys.argv[1] if len(sys.argv) > 1 else DEFAULT_OUT
-    user = os.environ.get("GH_PROFILE_USER", "chogerlate")
-    name = os.environ.get("GH_PROFILE_NAME", "Siwarat Laoprom")
-    generate_info_card(out, user=user, name=name)
+    generate_info_card(OUT)

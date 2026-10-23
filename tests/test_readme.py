@@ -13,14 +13,15 @@ def test_readme_structure_and_links():
     assert "chogerlate@github ~ $ whoami" in content
     assert "chogerlate@github ~ $ ./links.sh" in content
 
-    # Must contain SVG references
+    # Must contain SVG references matching the guide
     assert 'src="./contrib-heatmap.svg"' in content
-    assert 'src="./profile-ascii.svg"' in content
-    assert 'src="./stats.svg"' in content
+    assert 'src="./chogerlate-ascii.svg"' in content or 'src="./avi-ascii.svg"' in content
+    assert 'src="./info-card.svg"' in content
 
-    # Check image width alignment (860 heatmap, 420 + 420 table cells)
+    # Check image width alignment (860 heatmap, 370 + 490 table cells)
     assert 'width="860"' in content
-    assert content.count('width="420"') == 2
+    assert 'width="370"' in content
+    assert 'width="490"' in content
 
     # Check balanced HTML tags
     div_opens = len(re.findall(r"<div\b", content, re.I))
