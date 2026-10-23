@@ -34,6 +34,9 @@ def test_render_stats_svg(tmp_path):
     assert "current streak" in content
     assert "longest streak" in content
     assert "contributions / month" in content
+    assert "num-frame" in content
+    assert "num-final" in content
+    assert ".num-final { opacity: 1 !important; }" in content
     assert "</svg>" in content
 
 def test_make_info_card(tmp_path):

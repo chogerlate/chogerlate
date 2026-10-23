@@ -10,11 +10,28 @@ import os
 import re
 import sys
 import requests
+from requests.adapters import HTTPAdapter
+from urllib3.util import Retry
 from bs4 import BeautifulSoup
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 DEFAULT_USER = "chogerlate"
 DEFAULT_OUT = os.path.join(HERE, "..", "data", "contributions.json")
+
+
+def get_resilient_session(retries: int = 3, backoff_factor: float = 0.5) -> requests.Session:
+    session = requests.Session()
+    retry_strategy = Retry(
+        total=retries,
+        backoff_factor=backoff_factor,
+        status_forcelist=[429, 500, 502, 503, 504],
+        allowed_methods=["GET"],
+        raise_on_status=True,
+    )
+    adapter = HTTPAdapter(max_retries=retry_strategy)
+    session.mount("https://", adapter)
+    session.mount("http://", adapter)
+    return session
 
 
 def parse_contributions_html(html_text: str):
@@ -38,6 +55,10 @@ def parse_contributions_html(html_text: str):
             count = int(m.group(1)) if m else 0
         level = int(td.get("data-level") or 0)
         days.append({"date": date, "count": count, "level": level})
+
+    # Guard against silent corruption if tooltip markup changes
+    if any(d["level"] > 0 for d in days) and all(d["count"] == 0 for d in days):
+        raise ValueError("Contribution levels detected, but all counts parsed as 0. Tooltip markup likely changed.")
 
     days.sort(key=lambda d: d["date"])
     return days
@@ -125,10 +146,12 @@ def build_data(days, username=DEFAULT_USER):
     }
 
 
-def fetch_contributions(username=DEFAULT_USER, out_path=DEFAULT_OUT):
+def fetch_contributions(username=DEFAULT_USER, out_path=DEFAULT_OUT, session=None):
+    if session is None:
+        session = get_resilient_session()
     url = f"https://github.com/users/{username}/contributions"
     headers = {"User-Agent": "profile-readme-bot/1.0"}
-    resp = requests.get(url, headers=headers, timeout=30)
+    resp = session.get(url, headers=headers, timeout=30)
     resp.raise_for_status()
 
     days = parse_contributions_html(resp.text)

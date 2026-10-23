@@ -87,9 +87,11 @@ def render_stats(data, out_path=DEFAULT_OUT, user=None):
         '<style>',
         f'.t{{opacity:0;animation:in {SLIDE_DUR}s ease-out both}}',
         '@keyframes in{0%{opacity:0;transform:translateY(14px)}100%{opacity:1;transform:translateY(0)}}',
-        f'.b{{transform-box:fill-box;transform-origin:bottom;transform:scaleY(0);animation:grow {BAR_DUR}s ease-out both}}',
-        '@keyframes grow{to{transform:scaleY(1)}}',
-        '@media (prefers-reduced-motion: reduce){.t,.b{opacity:1!important;transform:none!important;animation:none!important}}',
+        '@media (prefers-reduced-motion: reduce){',
+        '  .t, .b { opacity: 1 !important; transform: none !important; animation: none !important; }',
+        '  .num-frame { display: none !important; }',
+        '  .num-final { opacity: 1 !important; }',
+        '}',
         '</style>',
         '<defs>',
         f'<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">',
@@ -125,10 +127,11 @@ def render_stats(data, out_path=DEFAULT_OUT, user=None):
             t_on = count_start + COUNT_DUR * (k - 1) / FRAMES
             t_off = count_start + COUNT_DUR * k / FRAMES
             anim = f'<set attributeName="opacity" to="1" begin="{t_on:.3f}s"/>'
+            cls = "num-final" if k == FRAMES else "num-frame"
             if k < FRAMES:
                 anim += f'<set attributeName="opacity" to="0" begin="{t_off:.3f}s"/>'
             parts.append(
-                f'<text x="{x+24:.1f}" y="{num_y}" opacity="0" font-size="54" font-weight="700" fill="{accent}">'
+                f'<text class="{cls}" x="{x+24:.1f}" y="{num_y}" opacity="0" font-size="54" font-weight="700" fill="{accent}">'
                 f'{fmt_val(v, value)}<tspan font-size="24" font-weight="400" fill="{MUTED}">{suffix}</tspan>'
                 f'{anim}</text>'
             )
@@ -160,8 +163,12 @@ def render_stats(data, out_path=DEFAULT_OUT, user=None):
         bx = plot_l + i * slot + (slot - bar_w) / 2
         fill = GREEN if m["total"] == peak and peak > 0 else BAR
         delay = BAR_START + i * BAR_STAGGER
-        parts.append(f'<rect class="b" x="{bx:.1f}" y="{plot_bot - h:.1f}" width="{bar_w:.1f}" height="{h:.1f}" '
-                     f'rx="3" fill="{fill}" style="animation-delay:{delay:.2f}s"/>')
+        parts.append(
+            f'<rect class="b" x="{bx:.1f}" y="{plot_bot - h:.1f}" width="{bar_w:.1f}" height="{h:.1f}" rx="3" fill="{fill}">'
+            f'<animate attributeName="height" from="0" to="{h:.1f}" begin="{delay:.2f}s" dur="{BAR_DUR:.2f}s" fill="freeze"/>'
+            f'<animate attributeName="y" from="{plot_bot:.1f}" to="{plot_bot - h:.1f}" begin="{delay:.2f}s" dur="{BAR_DUR:.2f}s" fill="freeze"/>'
+            f'</rect>'
+        )
         try:
             mon_letter = datetime.date.fromisoformat(m["month"] + "-01").strftime("%b")[0]
         except Exception:

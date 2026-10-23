@@ -20,6 +20,18 @@ MOCK_HTML = """
 <tool-tip for="contribution-day-component-4">3 contributions on January 5, 2026</tool-tip>
 """
 
+BROKEN_TOOLTIP_HTML = """
+<table>
+  <tbody>
+    <tr>
+      <td id="contribution-day-component-0" class="ContributionCalendar-day" data-date="2026-01-01" data-level="2"></td>
+      <td id="contribution-day-component-1" class="ContributionCalendar-day" data-date="2026-01-02" data-level="3"></td>
+    </tr>
+  </tbody>
+</table>
+<!-- No tooltips matching IDs -->
+"""
+
 def test_parse_and_build_contributions():
     from scripts.fetch_contributions import parse_contributions_html, build_data
 
@@ -38,3 +50,9 @@ def test_parse_and_build_contributions():
     assert data["best_day"]["date"] == "2026-01-04"
     assert data["current_streak"]["length"] == 2
     assert data["longest_streak"]["length"] == 2
+
+def test_parse_contributions_detects_tooltip_breakage():
+    from scripts.fetch_contributions import parse_contributions_html
+
+    with pytest.raises(ValueError, match="Contribution levels detected, but all counts parsed as 0"):
+        parse_contributions_html(BROKEN_TOOLTIP_HTML)
